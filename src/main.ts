@@ -12,7 +12,10 @@ async function bootstrap() {
     AppModule,
     new FastifyAdapter(),
   );
-  app.enableCors();
+  app.enableCors({
+    origin: true,
+    credentials: true,
+  });
 
   // ------ Swagger
 
