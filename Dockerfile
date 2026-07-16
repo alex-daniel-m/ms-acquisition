@@ -21,4 +21,4 @@ COPY --from=build /usr/src/app/dist ./dist
 EXPOSE 8081
 
 
-CMD [ "bun", "run", "-r", "tsconfig-paths/register", "dist/main.js" ]
+CMD [ "bun", "run", "dist/main.js" ]
