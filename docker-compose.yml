@@ -6,6 +6,8 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    image: 
+      ms-acquisition:latest
     ports:
       - "8081:8081"
     env_file:
