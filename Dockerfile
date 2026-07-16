@@ -17,6 +17,7 @@ ENV NODE_ENV=production
 COPY package.json bun.lock ./
 RUN bun install --frozen-lockfile --production
 COPY --from=build /usr/src/app/dist ./dist
+COPY .env* ./
 EXPOSE 8081
 
 
