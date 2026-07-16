@@ -15,10 +15,10 @@ FROM oven/bun:1.3.10-slim AS production
 WORKDIR /usr/src/app
 ENV NODE_ENV=production
 COPY package.json bun.lock ./
-COPY tsconfig.json ./
+COPY tsconfig.prod.json ./tsconfig.json
 RUN bun install --frozen-lockfile --production
 COPY --from=build /usr/src/app/dist ./dist
 EXPOSE 8081
 
 
-CMD [ "bun", "run", "dist/main.js" ]
+CMD [ "bun", "run", "-r", "tsconfig-paths/register", "dist/main.js" ]
