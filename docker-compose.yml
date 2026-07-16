@@ -1,0 +1,21 @@
+services:
+  ms-acquisition:
+    container_name: 
+      ms-acquisition
+    # Build image with dockerfile
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8081:8081"
+    env_file:
+      - .env
+      - .env.main
+    restart: 
+      unless-stopped
+    networks:
+      - innosk_network
+
+networks:
+  innosk_network:
+    external: true
