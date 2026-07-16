@@ -1,7 +1,7 @@
 FROM oven/bun:1.1-alpine AS builder
 WORKDIR /usr/src/app
 COPY package.json bun.lock ./
-RUN bun install --frozen-lockfile
+RUN bun install --frozen-lockfile --lockfile bun.lock
 COPY . .
 RUN bun run build
 RUN rm -rf node_modules && bun install --production --frozen-lockfile
