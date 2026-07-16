@@ -3,14 +3,14 @@ import { ApiProperty } from "@nestjs/swagger";
 export class LResponseDto {
 
   @ApiProperty()
-  x_correlation_id!: string;
+  x_correlation_id!: string; // correlation id
 
   @ApiProperty()
-  vtp!: string;
+  vtp!: string; // lead type
 
   @ApiProperty()
-  vi!: string;
+  vi!: string; // lead id
 
   @ApiProperty()
-  vav!: string;
+  vav!: string; // api version
 }
