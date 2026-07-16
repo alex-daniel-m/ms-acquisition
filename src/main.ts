@@ -13,8 +13,18 @@ async function bootstrap() {
     new FastifyAdapter(),
   );
   app.enableCors({
-    origin: true,
+    origin: (origin, callback) => {
+      if (!origin) return callback(null, true);
+
+      if (origin.endsWith('.dev-innosk') || origin.endsWith('.innosk.com')) {
+        callback(null, true);
+      } else {
+        callback(new Error('Not allowed by CORS'), true);
+      }
+    },
     credentials: true,
+    methods: 'GET,POST,OPTIONS',
+    allowedHeaders: 'Content-Type,Authorization,X-Requested-With',
   });
 
   // ------ Swagger
