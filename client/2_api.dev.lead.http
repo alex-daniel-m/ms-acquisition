@@ -21,3 +21,23 @@ Referer: https://cold-chain-monitoring.com/landing
     "storage_capacity": "500-1000 tons"
   }
 }
+
+### Success Lead
+POST {{host}}{{baseUrl}}{{lead}}
+Content-Type: application/json
+Origin: http://cold-chain-monitoring.innosk.com
+Accept-Language: : es-CO,es;q=0.9
+Referer: https://cold-chain-monitoring.com/landing
+
+{
+  "vsi": "c947ed996436dbe0a300480daa33e9c5f158f77fdea3a12c8e941326f53e3522",
+  "vssi": "8ce8551e-8841-48e8-b02a-28b79058133f",
+  "vc": {
+    "vr": "https://www.google.com/",
+    "vp": "https://game.hzone.com/solutions?utm_source=google&utm_medium=cpc&gclid=EAIaIQobChMI7_vR58fD_AIVBQiRCh0vGgSUEAAYASAAEgI_vPD_BwE"
+  },
+  "vn": {
+    "industry": "Pharma",
+    "storage_capacity": "500-1000 tons"
+  }
+}
