@@ -1,13 +1,13 @@
 import { Body, Controller, Post, UseGuards, UseInterceptors, UsePipes, ValidationPipe } from "@nestjs/common";
 import { routes } from "../routes/routes";
-import { AuditRequest } from "@share/common/audit-request.interceptor";
-import { LeadService } from "@application/services/lead.service";
-import { SiteGuard } from "@share/common/site.guard";
+import { AuditRequest } from "../../../share/common/audit-request.interceptor";
+import { LeadService } from "../../../application/services/lead.service";
+import { SiteGuard } from "../../../share/common/site.guard";
 import { ApiResponse } from "@nestjs/swagger";
 import { swagger_desc } from "../swagger/swagger-status-codes";
-import { LRequestDto } from "@application/dtos/lead-request.dto";
-import { LResponseDto } from "@application/dtos/lead-response.dto";
-import { FResponseDto } from "@share/dtos/fault-response.dto";
+import { LRequestDto } from "../../../application/dtos/lead-request.dto";
+import { LResponseDto } from "../../../application/dtos/lead-response.dto";
+import { FResponseDto } from "../../../share/dtos/fault-response.dto";
 
 @Controller(routes.ENV_APP_PATH)
 export class LeadController {

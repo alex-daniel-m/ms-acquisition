@@ -1,4 +1,4 @@
-import { VcDto } from "@application/dtos/context.dto";
+import { VcDto } from "../../application/dtos/context.dto";
 
 export class Context {
 

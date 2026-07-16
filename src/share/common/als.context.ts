@@ -1,6 +1,6 @@
 import { AsyncLocalStorage } from "async_hooks";
-import { LeadSourceType } from "@domain/types/lead-source.type";
-import { LeadStatusType } from "@domain/types/lead-status.type";
+import { LeadSourceType } from "../../domain/types/lead-source.type";
+import { LeadStatusType } from "../../domain/types/lead-status.type";
 
 export interface RequestStore {
   // ----- Internal

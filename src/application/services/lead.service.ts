@@ -1,19 +1,19 @@
 import { Inject, Injectable } from "@nestjs/common";
-import { ILeadRepository } from "@domain/ports/lead.repository";
-import { ConfigurationService } from "@share/common/configuration.service";
-import { StateService } from "@share/common/state.service";
+import { ILeadRepository } from "../../domain/ports/lead.repository";
+import { ConfigurationService } from "../../share/common/configuration.service";
+import { StateService } from "../../share/common/state.service";
 import { LResponseDto } from "../dtos/lead-response.dto";
 import { LRequestDto } from "../dtos/lead-request.dto";
-import { generateFingerprint } from "@share/tools/tools";
-import { Tracking } from "@domain/models/tracking.model";
-import { Context } from "@domain/models/context.model";
-import { NicheData } from "@domain/models/niche-data.model";
-import { LeadType } from "@domain/types/lead.type";
-import { LeadSourceType } from "@domain/types/lead-source.type";
-import { Lead } from "@domain/models/lead.model";
-import { LeadStatusType } from "@domain/types/lead-status.type";
-import { als } from "@share/common/als.context";
-import { TrackingType } from "@domain/types/tracking.type";
+import { generateFingerprint } from "../../share/tools/tools";
+import { Tracking } from "../../domain/models/tracking.model";
+import { Context } from "../../domain/models/context.model";
+import { NicheData } from "../../domain/models/niche-data.model";
+import { LeadType } from "../../domain/types/lead.type";
+import { LeadSourceType } from "../../domain/types/lead-source.type";
+import { Lead } from "../../domain/models/lead.model";
+import { LeadStatusType } from "../../domain/types/lead-status.type";
+import { als } from "../../share/common/als.context";
+import { TrackingType } from "../../domain/types/tracking.type";
 
 @Injectable()
 export class LeadService {

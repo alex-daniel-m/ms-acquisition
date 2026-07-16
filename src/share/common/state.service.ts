@@ -2,8 +2,8 @@ import { Injectable } from "@nestjs/common";
 import { als } from "./als.context";
 import { ConfigurationService } from "./configuration.service";
 import { SiteConfigType } from "../types/types";
-import { LeadSourceType } from "@domain/types/lead-source.type";
-import { LeadStatusType } from "@domain/types/lead-status.type";
+import { LeadSourceType } from "../../domain/types/lead-source.type";
+import { LeadStatusType } from "../../domain/types/lead-status.type";
 
 @Injectable()
 export class StateService {

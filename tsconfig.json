@@ -19,20 +19,6 @@
     "forceConsistentCasingInFileNames": true,
     "noImplicitAny": false,
     "strictBindCallApply": false,
-    "noFallthroughCasesInSwitch": false,
-    "paths": {
-      "@application/*": [
-        "./src/application/*"
-      ],
-      "@share/*": [
-        "./src/share/*"
-      ],
-      "@domain/*": [
-        "./src/domain/*"
-      ],
-      "@infrastructure/*": [
-        "./src/infrastructure/*"
-      ]
-    }
+    "noFallthroughCasesInSwitch": false
   }
 }

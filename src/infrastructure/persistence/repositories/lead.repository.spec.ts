@@ -1,9 +1,9 @@
 import { Injectable } from "@nestjs/common";
-import { Lead } from "@domain/models/lead.model";
-import { ILeadRepository } from "@domain/ports/lead.repository";
-import { AuditPersistence } from "@share/common/audit-persistence.decorator";
-import { BaseInfraService } from "@share/common/base-infra.service";
-import { StateService } from "@share/common/state.service";
+import { Lead } from "../../../domain/models/lead.model";
+import { ILeadRepository } from "../../../domain/ports/lead.repository";
+import { AuditPersistence } from "../../../share/common/audit-persistence.decorator";
+import { BaseInfraService } from "../../../share/common/base-infra.service";
+import { StateService } from "../../../share/common/state.service";
 
 @Injectable()
 export class LeadRepositorySpec extends BaseInfraService implements ILeadRepository {
