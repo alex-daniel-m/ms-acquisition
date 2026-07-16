@@ -1,0 +1,1 @@
+export type LeadStatusType = 'PENDING' | 'VISIT' | 'API' | 'UNKNOWN';

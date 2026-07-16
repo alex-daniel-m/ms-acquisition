@@ -1,0 +1,1 @@
+export type NicheDataType = Record<string, any>;

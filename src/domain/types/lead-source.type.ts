@@ -1,0 +1,1 @@
+export type LeadSourceType = 'VISIT' | 'LEAD' | 'API' | 'UNKNOWN';
