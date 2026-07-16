@@ -30,7 +30,7 @@ export function AuditException(
       // before
       // -------------------------
 
-      const state_service: StateService = this.state_service;
+      const state_service: StateService = (this as any).state_service;
       const x_correlation_id = state_service.getXCorrelationId();
       const class_name = target.constructor.name;
       const method_name = String(property_key);
