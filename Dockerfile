@@ -1,18 +1,23 @@
-FROM oven/bun:1.1-alpine AS builder
+FROM oven/bun:1.3.10 AS install
 WORKDIR /usr/src/app
-COPY package.json bun.lock* ./
+COPY package.json bun.lock ./
 RUN bun install --frozen-lockfile
+
+
+FROM oven/bun:1.3.10 AS build
+WORKDIR /usr/src/app
+COPY --from=install /usr/src/app/node_modules ./node_modules
 COPY . .
 RUN bun run build
-RUN rm -rf node_modules && bun install --production --frozen-lockfile
 
 
-FROM oven/bun:1.1-alpine AS runner
+FROM oven/bun:1.3.10-slim AS production
 WORKDIR /usr/src/app
 ENV NODE_ENV=production
-COPY --from=builder /usr/src/app/package.json ./
-COPY --from=builder /usr/src/app/node_modules ./node_modules
-COPY --from=builder /usr/src/app/dist ./dist
+COPY package.json bun.lock ./
+RUN bun install --frozen-lockfile --production
+COPY --from=build /usr/src/app/dist ./dist
 EXPOSE 8081
 
-CMD ["bun", "dist/main.js"]
+
+CMD [ "bun", "run", "dist/main.js" ]
